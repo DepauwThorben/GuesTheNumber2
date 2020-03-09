@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Guess the Number !</h2>
+    <div class="card bg-light mb-3">
+       <div class="card-body">
+          <p class="card-text">Guess the computer generated random number between 1 and 100.</p>
+       </div>
+    </div>
+   <div>
+     <label>Your Guess: </label>
+     <input type="number" [value]="guess" (input)="guess = $event.target.value" />
+     <button (click)="verifyGuess()" class="btn btn-primary btn-sm">Verify</button>
+     <button (click)="initializeGame()" class="btn btn-warning btn-
+                                                           sm">Restart</button>
+   </div>
+  <div>
+     <p *ngIf="deviation<0" class="alert alert-warning">Your guess is higher.</p>
+     <p *ngIf="deviation>0" class="alert alert-warning">Your guess is lower.</p>
+  </div>
+  <p class="text-info">Guesses left :
+    <span class="badge">{{noOfTries}}</span>
+  </p>
+  <p>Time left: {{ counter.counter }}</p>
+  <div>
+     <p *ngIf="noOfTries==0" class="alert alert-warning">You have lost. Please restart!</p>   
+     <p *ngIf="counter.counter==0" class="alert alert-warning">You have lost. Please restart!</p>  
+     <p *ngIf="deviation===0" class="alert alert-success">Yes! You have won! Please restart to play again!</p>      
+  </div>
+</div>
