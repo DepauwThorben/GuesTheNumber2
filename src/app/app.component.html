@@ -1,7 +1,5 @@
-<div fxFlex fxLayout="column" fxLayoutGap="10px" style="height:100vh">
-   
+<div fxFlex fxLayout="column" fxLayoutGap="10px" style="height:100vh"> 
    <div fLayout ="row wrap">
-
       <div fxFlex="50" fxLayout="column">
          <h2>Guess the Number !</h2>
          <div class="card bg-light mb-3">
@@ -12,9 +10,8 @@
         <div>
           <label>Your Guess: </label>
           <input type="number" [value]="guess" (input)="guess = $event.target.value" />
-          <button (click)="verifyGuess()" class="btn btn-primary btn-sm">Verify</button>
-          <button (click)="initializeGame()" class="btn btn-warning btn-
-                                                                sm">Restart</button>
+          <button mat-raised-button (click)="verifyGuess()" class="btn btn-primary btn-sm">Verify</button>
+          <button mat-raised-button (click)="initializeGame()" class="btn btn-warning btn-sm">Restart</button>
         </div>
       </div>
  
